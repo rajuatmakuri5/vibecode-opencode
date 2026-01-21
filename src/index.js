@@ -14,10 +14,6 @@ app.use('/static', express.static(__dirname + '/static'));
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/static/index.html');
 });
-
-app.get('/favicon.ico', (req, res) => {
-    res.status(204).end();
-});
 app.get('/items', getItems);
 app.post('/items', addItem);
 app.put('/items/:id', updateItem);

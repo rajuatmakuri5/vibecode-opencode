@@ -47,10 +47,7 @@ function UserTodoApp() {
                 <UserTodoList
                     key={selectedUserId}
                     userId={selectedUserId}
-                    userName={
-                        users.find((u) => u.id === selectedUserId) &&
-                        users.find((u) => u.id === selectedUserId).name
-                    }
+                    userName={users.find((u) => u.id === selectedUserId)?.name}
                 />
             )}
         </React.Fragment>
