@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Gayatri 💖</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at top, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Segoe UI", cursive;
+    overflow: hidden;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.95);
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+    max-width: 420px;
+  }
+
+  h1 {
+    color: #ff3e7f;
+    font-size: 2.6em;
+    margin-bottom: 15px;
+  }
+
+  #message {
+    font-size: 1.25em;
+    color: #444;
+    min-height: 140px;
+    line-height: 1.6;
+  }
+
+  button {
+    margin-top: 25px;
+    padding: 14px 30px;
+    font-size: 1em;
+    background: linear-gradient(135deg, #ff4081, #ff6f91);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+  }
+
+  button:hover {
+    transform: scale(1.1);
+  }
+
+  .heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 2em;
+    animation: floatUp 6s linear infinite;
+  }
+
+  @keyframes floatUp {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-120vh); opacity: 0; }
+  }
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_6b0c7cbd6b.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+  <h1>🎂 Happy Birthday Gayatri 💖</h1>
+  <div id="message"></div>
+  <button onclick="celebrate()">Click for Magic ✨</button>
+</div>
+
+<script>
+  const text = 
+`Dear Gayatri 💕
+
+On this special day,
+the universe feels a little brighter 🌸
+
+Your smile is my favorite view,
+your laughter my favorite sound 💖
+
+May your days be filled with love,
+your dreams wrapped in happiness,
+and your heart always feel cherished ✨
+
+Happy Birthday, beautiful 💫`;
+
+  let i = 0;
+  function typeText() {
+    if (i < text.length) {
+      document.getElementById("message").innerHTML += text.charAt(i) === "\n" ? "<br>" : text.charAt(i);
+      i++;
+      setTimeout(typeText, 40);
+    }
+  }
+  typeText();
+
+  function celebrate() {
+    for (let i = 0; i < 60; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = ["💖","🎉","✨","🎂","💕"][Math.floor(Math.random() * 5)];
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+      document.body.appendChild(heart);
+    }
+    alert("💝 You are deeply loved, Gayatri 💝");
+  }
+</script>
+
+</body>
+</html>
